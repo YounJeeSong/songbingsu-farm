@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>송빙수농장 - 신안소금과 장수사과</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+        
+        header {
+            background: white;
+            color: #1a1a1a;
+            padding: 3rem 0 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+        
+        header p {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .intro {
+            background: white;
+            padding: 3rem 2rem 2rem 2rem;
+            border-radius: 0;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        
+        .intro h2 {
+            color: #1a1a1a;
+            margin-bottom: 0;
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+        
+        .video-section {
+            background: white;
+            padding: 3rem 2rem;
+            margin-bottom: 0;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            aspect-ratio: 16 / 9;
+            background: #fafafa;
+            border: 1px solid #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-placeholder {
+            text-align: center;
+            color: #999;
+        }
+        
+        .video-placeholder p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .video-placeholder small {
+            font-size: 0.85rem;
+            color: #bbb;
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .intro-text {
+            background: white;
+            padding: 2rem 2rem 3rem 2rem;
+            margin-bottom: 4rem;
+            border-bottom: 1px solid #e8e8e8;
+            text-align: center;
+        }
+        
+        .intro-text p {
+            color: #666;
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 0;
+            padding: 2rem 1.5rem;
+            border: 1px solid #e8e8e8;
+            transition: border-color 0.3s;
+        }
+        
+        .product-card:hover {
+            border-color: #1a1a1a;
+        }
+        
+        .product-emoji {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .product-image.salt {
+            background-image: url('https://images.unsplash.com/photo-1608797178974-15b35a064910?w=600&q=80');
+        }
+        
+        .product-image.apple {
+            background-image: url('https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=600&q=80');
+        }
+        
+        .product-card h3 {
+            color: #1a1a1a;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+        }
+        
+        .product-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            font-weight: 400;
+            text-align: center;
+            margin: 1.5rem 0;
+            letter-spacing: -0.5px;
+        }
+        
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 0;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        
+        .order-btn:hover {
+            background: #333;
+        }
+        
+        .payment-info {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 0;
+            border-top: 1px solid #e8e8e8;
+            border-bottom: 1px solid #e8e8e8;
+            margin-bottom: 3rem;
+        }
+        
+        .payment-info h2 {
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+        }
+        
+        .account-info {
+            background: #fafafa;
+            padding: 2rem;
+            border-radius: 0;
+            border-left: 2px solid #1a1a1a;
+            margin-bottom: 2rem;
+        }
+        
+        .account-info p {
+            font-size: 1rem;
+            margin: 0.8rem 0;
+            color: #666;
+            font-weight: 300;
+        }
+        
+        .account-info strong {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .order-steps {
+            background: #fafafa;
+            padding: 2rem;
+            border-radius: 0;
+            border-left: 2px solid #1a1a1a;
+        }
+        
+        .order-steps h3 {
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+        }
+        
+        .order-steps ol {
+            margin-left: 1.5rem;
+        }
+        
+        .order-steps li {
+            margin: 0.8rem 0;
+            color: #666;
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background: #fafafa;
+            color: #666;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            border-top: 1px solid #e8e8e8;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        
+        footer p {
+            margin: 0.3rem 0;
+        }
+        
+        .category-title {
+            text-align: center;
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            margin: 5rem 0 3rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e8e8e8;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>송빙수농장</h1>
+        <p>신안소금과 장수사과</p>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h2>자연이 만든 진심</h2>
+        </div>
+
+        <!-- 영상 섹션 -->
+        <div class="video-section">
+            <div class="video-container">
+                <!-- 여기에 유튜브 영상이나 직접 업로드한 영상을 넣을 예정입니다 -->
+                <div class="video-placeholder">
+                    <p>영상을 추가해주세요</p>
+                    <small>유튜브 링크나 직접 업로드한 영상 파일</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro-text">
+            <p>천일염이 품은 신안 바다의 시간과<br>장수 산자락에서 익어가는 사과의 계절을 담았습니다</p>
+        </div>
+
+        <!-- 신안소금 섹션 -->
+        <h2 class="category-title">신안 천일염</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image salt"></div>
+                <h3>신안소금 0.5kg</h3>
+                <p>깨끗한 신안 바다에서 생산된 천일염<br>미네랄이 풍부한 건강한 소금</p>
+                <div class="price">8,000원</div>
+                <button class="order-btn" onclick="openOrderForm('신안소금 0.5kg', '8,000원')">주문하기</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image salt"></div>
+                <h3>신안소금 1kg</h3>
+                <p>깨끗한 신안 바다에서 생산된 천일염<br>미네랄이 풍부한 건강한 소금</p>
+                <div class="price">15,000원</div>
+                <button class="order-btn" onclick="openOrderForm('신안소금 1kg', '15,000원')">주문하기</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image salt"></div>
+                <h3>신안소금 3kg</h3>
+                <p>깨끗한 신안 바다에서 생산된 천일염<br>미네랄이 풍부한 건강한 소금</p>
+                <div class="price">40,000원</div>
+                <button class="order-btn" onclick="openOrderForm('신안소금 3kg', '40,000원')">주문하기</button>
+            </div>
+        </div>
+
+        <!-- 장수사과 섹션 -->
+        <h2 class="category-title">장수 사과</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image apple"></div>
+                <h3>장수사과 2kg (5~6개)</h3>
+                <p>청정 장수에서 자란 신선한 사과<br>아삭하고 달콤한 맛</p>
+                <div class="price">18,000원</div>
+                <button class="order-btn" onclick="openOrderForm('장수사과 2kg', '18,000원')">주문하기</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image apple"></div>
+                <h3>장수사과 5kg (13~15개)</h3>
+                <p>청정 장수에서 자란 신선한 사과<br>아삭하고 달콤한 맛</p>
+                <div class="price">42,000원</div>
+                <button class="order-btn" onclick="openOrderForm('장수사과 5kg', '42,000원')">주문하기</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image apple"></div>
+                <h3>장수사과 10kg (26~30개)</h3>
+                <p>청정 장수에서 자란 신선한 사과<br>아삭하고 달콤한 맛</p>
+                <div class="price">80,000원</div>
+                <button class="order-btn" onclick="openOrderForm('장수사과 10kg', '80,000원')">주문하기</button>
+            </div>
+        </div>
+
+        <!-- 결제 안내 -->
+        <div class="payment-info">
+            <h2>결제 안내</h2>
+            <div class="account-info">
+                <p><strong>입금 계좌</strong></p>
+                <p>국민은행</p>
+                <p>72180201627565</p>
+                <p>송진섭</p>
+            </div>
+
+            <div class="order-steps">
+                <h3>주문 방법</h3>
+                <ol>
+                    <li>원하시는 상품의 "주문하기" 버튼을 클릭하세요</li>
+                    <li>주문서 작성 페이지에서 정보를 입력하세요</li>
+                    <li>위 계좌로 상품 금액을 입금해주세요</li>
+                    <li>입금자명을 주문시 입력하신 이름과 동일하게 해주세요</li>
+                    <li>입금 확인 후 배송해드립니다 (영업일 기준 1-2일 소요)</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 송빙수농장. All rights reserved.</p>
+        <p>건강한 농산물로 행복을 전합니다</p>
+    </footer>
+
+    <script>
+        function openOrderForm(productName, price) {
+            // 구글 폼 URL을 여기에 넣을 예정입니다
+            // 일단은 알림으로 대체
+            const message = `주문 상품: ${productName}\n가격: ${price}\n\n주문서 작성 페이지로 이동합니다.`;
+            alert(message);
+            
+            // 실제로는 구글 폼이나 주문 페이지로 이동
+            // window.location.href = '주문서URL';
+        }
+    </script>
+</body>
+</html>
