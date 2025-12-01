@@ -21,22 +21,50 @@
         header {
             background: white;
             color: #1a1a1a;
-            padding: 3rem 0 2rem 0;
-            text-align: center;
+            padding: 1.5rem 0;
             border-bottom: 1px solid #e8e8e8;
         }
         
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
         header h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            margin: 0;
             font-weight: 500;
             letter-spacing: -0.5px;
         }
         
-        header p {
-            font-size: 0.95rem;
+        .main-nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        .main-nav a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: color 0.3s;
+            letter-spacing: -0.3px;
+        }
+        
+        .main-nav a:hover {
             color: #666;
+        }
+        
+        header p {
+            font-size: 0.85rem;
+            color: #999;
             font-weight: 300;
+            text-align: center;
+            margin-top: 0.5rem;
         }
         
         .container {
@@ -331,7 +359,14 @@
 </head>
 <body>
     <header>
-        <h1>송빙수농장</h1>
+        <div class="header-container">
+            <h1>송빙수농장</h1>
+            <nav class="main-nav">
+                <a href="index.html">홈</a>
+                <a href="salt.html">소금</a>
+                <a href="apple.html">사과</a>
+            </nav>
+        </div>
         <p>신안소금과 장수사과</p>
     </header>
 

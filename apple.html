@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장수사과 - 송빙수농장</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+        }
+        
+        header {
+            background: white;
+            color: #1a1a1a;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header h1 {
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+        
+        .main-nav a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            transition: color 0.3s;
+            letter-spacing: -0.3px;
+        }
+        
+        .main-nav a:hover {
+            color: #666;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+        
+        .product-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: #fafafa;
+            border: 1px solid #e8e8e8;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        .product-description {
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            color: #666;
+            font-weight: 300;
+        }
+        
+        .options-section {
+            margin-bottom: 4rem;
+        }
+        
+        .options-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .option-item {
+            padding: 1.5rem;
+            border: 1px solid #e8e8e8;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .option-item:hover {
+            border-color: #1a1a1a;
+        }
+        
+        .option-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .option-name {
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+        }
+        
+        .option-price {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+        
+        .option-desc {
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+        
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 1.5rem;
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 400;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+        }
+        
+        .order-btn:hover {
+            background: #333;
+        }
+        
+        footer {
+            background: #fafafa;
+            color: #666;
+            text-align: center;
+            padding: 3rem 0;
+            margin-top: 5rem;
+            border-top: 1px solid #e8e8e8;
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+        
+        footer p {
+            margin: 0.3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .main-nav {
+                gap: 1.5rem;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>송빙수농장</h1>
+            <nav class="main-nav">
+                <a href="index.html">홈</a>
+                <a href="salt.html">소금</a>
+                <a href="apple.html">사과</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">장수 사과</h1>
+        <p class="page-subtitle">청정 장수에서 자란 신선한 사과, 아삭하고 달콤한 맛</p>
+        
+        <div class="product-image-placeholder">
+            장수사과 이미지
+        </div>
+        
+        <div class="product-description">
+            <p>
+                전라북도 장수는 해발 높은 산간 지역으로, 큰 일교차와 맑은 공기가 
+                당도 높고 아삭한 사과를 만들어냅니다.
+            </p>
+            <br>
+            <p>
+                송빙수농장의 장수사과는 친환경 농법으로 정성껏 키워낸 프리미엄 사과입니다.
+                신선함과 맛, 영양을 모두 갖춘 건강한 과일을 만나보세요.
+            </p>
+        </div>
+        
+        <div class="options-section">
+            <h2 class="options-title">구매 옵션</h2>
+            
+            <div class="option-item">
+                <div class="option-header">
+                    <span class="option-name">장수사과 2kg (5~6개)</span>
+                    <span class="option-price">18,000원</span>
+                </div>
+                <p class="option-desc">1~2인 가구에 적당한 사이즈</p>
+            </div>
+            
+            <div class="option-item">
+                <div class="option-header">
+                    <span class="option-name">장수사과 5kg (13~15개)</span>
+                    <span class="option-price">42,000원</span>
+                </div>
+                <p class="option-desc">가족이 함께 즐기기 좋은 사이즈</p>
+            </div>
+            
+            <div class="option-item">
+                <div class="option-header">
+                    <span class="option-name">장수사과 10kg (26~30개)</span>
+                    <span class="option-price">80,000원</span>
+                </div>
+                <p class="option-desc">대용량으로 더 저렴하게, 선물용으로도 좋아요</p>
+            </div>
+        </div>
+        
+        <a href="https://forms.gle/W5URRnpUadLyAiAG9" target="_blank" class="order-btn">주문하기</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 송빙수농장. All rights reserved.</p>
+        <p>건강한 농산물로 행복을 전합니다</p>
+    </footer>
+</body>
+</html>
